@@ -16,6 +16,7 @@ also serve in other places.
 import os
 from os import path
 import errno
+import stat
 import tempfile
 import warnings
 from webassets import six
