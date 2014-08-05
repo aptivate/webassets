@@ -207,6 +207,7 @@ class FilesystemCache(BaseCache):
                 f.flush()
             if os.path.isfile(filename):
                 os.unlink(filename)
+            os.chmod(temp_filename, stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH)
             os.rename(temp_filename, filename)
         except:
             os.unlink(temp_filename)
